@@ -1,0 +1,15 @@
+<app-table-editor [table]="table">
+    <ng-template headerCell let-column>
+      {{ column.label }}
+    </ng-template>
+  <ng-template cell let-cell>
+    {{ cell.value }}
+  </ng-template>
+<!--  <app-row *ngFor="let row of table.rows">-->
+<!--    <app-cell [cell]="cell" *ngFor="let cell of row.cells"></app-cell>-->
+<!--  </app-row>-->
+<!--  <app-footer-row *ngFor="let row of table.footerRows">-->
+<!--    <app-cell [cell]="cell" *ngFor="let cell of row.cells"></app-cell>-->
+<!--  </app-footer-row>-->
+</app-table-editor>
+

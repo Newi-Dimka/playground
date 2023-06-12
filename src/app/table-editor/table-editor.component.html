@@ -1,0 +1,22 @@
+<table>
+  <thead>
+    <tr>
+      <ng-container *ngFor="let column of table.columns; let index = index;">
+        <th cell>
+          <ng-container *ngTemplateOutlet="headerCellDirective.templateRef; context: {$implicit: column}"></ng-container>
+        </th>
+      </ng-container>
+    </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let row of table.rows">
+      <td cell [_cell]="cell" *ngFor="let cell of row.cells">
+        <ng-container *ngTemplateOutlet="cellDirective.templateRef; context: {$implicit: cell}"></ng-container>
+      </td>
+  </tr>
+   </tbody>
+<!--  <tfoot>-->
+<!--  <ng-content select="app-footer-row"></ng-content>-->
+<!--  </tfoot>-->
+</table>
+
