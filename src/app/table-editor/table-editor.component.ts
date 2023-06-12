@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, ContentChild, ContentChildren, Input, QueryList} from '@angular/core';
+import {ChangeDetectionStrategy, Component, ContentChild, Input, ViewEncapsulation} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {TableModel} from "../model/models";
 import {HeaderCellDirective} from "../header-cell/header-cell.directive";
@@ -11,8 +11,9 @@ import {CellComponent} from "../cell/cell.component";
   standalone: true,
   imports: [CommonModule, HeaderCellComponent, CellComponent],
   templateUrl: './table-editor.component.html',
-  styleUrls: ['./table-editor.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./table-editor.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None
 })
 export class TableEditorComponent {
   @Input() table!: TableModel;

@@ -2,7 +2,7 @@
   <thead>
     <tr>
       <ng-container *ngFor="let column of table.columns; let index = index;">
-        <th cell>
+        <th cell [column]="column" [width]="column.width">
           <ng-container *ngTemplateOutlet="headerCellDirective.templateRef; context: {$implicit: column}"></ng-container>
         </th>
       </ng-container>
@@ -10,7 +10,7 @@
   </thead>
   <tbody>
   <tr *ngFor="let row of table.rows">
-      <td cell [_cell]="cell" *ngFor="let cell of row.cells">
+      <td cell [_cell]="cell" *ngFor="let cell of row.cells; let i = index;" [width]="table.columns[i].width">
         <ng-container *ngTemplateOutlet="cellDirective.templateRef; context: {$implicit: cell}"></ng-container>
       </td>
   </tr>

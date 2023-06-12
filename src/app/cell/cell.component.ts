@@ -15,4 +15,8 @@ import {CellModel} from "../model/models";
 })
 export class CellComponent {
   @Input() _cell!: CellModel;
+
+  ngDoCheck(): void {
+    console.log('cell check!')
+  }
 }
